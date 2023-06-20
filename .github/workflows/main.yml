@@ -27,7 +27,7 @@ jobs:
           cd Common  # Replace with the actual path to the submodule directory
           git add .
           git commit -m "Sync submodule changes"
-          git push origin main
+          git push origin 16.0
 
       - name: Log completion
         run: echo "Submodule update script completed"
