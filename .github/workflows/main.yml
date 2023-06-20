@@ -1,0 +1,33 @@
+name: Submodule Sync
+
+on:
+  push:
+    branches:
+      - 16.0
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set Git user
+        run: |
+          git config user.email "muram8700@gmail.com"
+          git config user.name "muram105"
+
+      - name: Update submodule
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          echo "Running the submodule update script"
+          git submodule update --remote
+          cd Common  # Replace with the actual path to the submodule directory
+          git add .
+          git commit -m "Sync submodule changes"
+          git push origin main
+
+      - name: Log completion
+        run: echo "Submodule update script completed"
