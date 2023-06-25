@@ -3,7 +3,7 @@ name: Sync Submodule
 on:
   push:
     branches:
-      - '16.0'  # Adjust the branch name if needed
+      - main  # Adjust the branch name if needed
 
 jobs:
   sync:
@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          ref: '16.0'  # Specify the branch name to checkout
 
       - name: Update submodule
         run: |
