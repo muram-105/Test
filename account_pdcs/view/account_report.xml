@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+	<data>
+
+		<template id="search_template_extra_options"
+			inherit_id="account_reports.search_template_extra_options">
+			<xpath expr="//button[hasclass('dropdown-toggle')]"
+				position="inside">
+				<t t-if="options.get('eu_cheques') == True">
+					<t t-if="options.get('unreconciled') == True">,</t>
+						<t>Exclude Uncollected Cheques</t>
+				</t>
+			</xpath>
+			
+			<xpath expr="//div[hasclass('o_filter_menu')]"
+				position="inside">
+				<a role="menuitem" class="dropdown-item js_account_report_bool_filter"
+				 t-if="options.get('eu_cheques') != None" 
+				title="Exclude Uncollected Cheques" data-filter="eu_cheques">Exclude Uncollected Cheques</a>
+				
+			</xpath>
+
+
+
+		</template>
+
+
+	</data>
+</odoo>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_account_payment_tree" model="ir.ui.view">
+			<field name="name">account.payment.tree.inherit</field>
+			<field name="model">account.payment</field>
+			<field name="inherit_id"
+				ref="account.view_account_payment_tree" />
+			<field name="arch" type="xml">
+				<field name="date" position="after">
+					<field name="ref"/>
+					<field name="due_date" string="Due Date"/>
+					<field name="collect_date" />
+					<field name="cheque_state" />
+				</field>
+				<field name="amount_company_currency_signed" position="after">
+					<field name="journal_bank_id" />
+				</field>
+			</field>
+		</record>
+
+		<record id="view_account_supplier_payment_tree"
+			model="ir.ui.view">
+			<field name="name">account.payment.tree.inherit</field>
+			<field name="model">account.payment</field>
+			<field name="inherit_id"
+				ref="account.view_account_supplier_payment_tree" />
+			<field name="arch" type="xml">
+				<field name="journal_bank_id" position="replace" />
+			</field>
+		</record>
+
+		<record id="view_account_payment_search" model="ir.ui.view">
+			<field name="name">account.payment.search.inherit</field>
+			<field name="model">account.payment</field>
+			<field name="inherit_id"
+				ref="account.view_account_payment_search" />
+			<field name="arch" type="xml">
+				<filter name="reconciled" position="after">
+					<filter string="Unreconcilied" name="reconciled"
+						domain="[('is_reconciled', '=', False)]" />
+				</filter>
+				<filter name="state_sent" position="after">
+					<filter string="Unsent" name="state_unsent"
+						domain="[('is_move_sent', '!=', True)]" />
+				</filter>
+				<filter name="matched" position="after">
+					<filter string="Bank Unmatched" name="unmatched"
+						domain="[('is_matched', '!=', True)]" />
+				</filter>
+				<filter name="state_draft" position="before">
+					<filter string="Cheque" domain="[('is_cheque','=',True)]"
+						name='cheque' />
+					<separator />
+					<filter string="Returned"
+						domain="[('cheque_state','=','refused')]" name='returned' />
+					<separator />
+					<filter
+						domain="[('due_date','&lt;=',time.strftime('%Y-%m-%d 23:59:59'))]"
+						help="Over Due Cheque" string="Over Due Cheque" name='due_date' />
+					<separator />
+					<filter string="In Cheque Box"
+						domain="[('cheque_state','=','in_cheque_box')]"
+						name='in_cheque_box' />
+					<filter string="Under Collection"
+						domain="[('cheque_state','=','under_collection')]"
+						name='under_collection' />
+					<filter string="Collected Cheque"
+						domain="[('cheque_state','=','collected')]" name='collected' />
+					<filter string="Refused Cheque"
+						domain="[('cheque_state','=','refused')]" name='refused' />
+					<filter string="Issued Cheque"
+						domain="[('cheque_state','=','issued')]" name='issued' />
+					<separator />
+				</filter>
+				<filter name="date" position="after">
+                	<filter string="Cheque Due Date" name="due_date" date="date" />
+                </filter>
+				<field name="journal_id" position="after">
+					<field name="due_date" string="Due Date"/>
+					<field name="send_to_bank_date" />
+					<field name="collect_date" />
+					<field name="journal_bank_id" />
+					<field name="bank_branch_id" />
+					<field name="cheque_state" />
+					<filter string="Route" domain="[]"
+						context="{'group_by':'journal_bank_id'}" name='journal_bank_id' />
+					<filter string="Due Date" domain="[]"
+						context="{'group_by':'due_date'}" name='due_date' />
+					<filter string="Bank Branch" domain="[]"
+						context="{'group_by':'bank_branch_id'}" name='grou_bank_branch_id' />
+					<filter string="Cheque Status" domain="[]"
+						context="{'group_by':'cheque_state'}" name='cheque_state' />
+				</field>
+			</field>
+		</record>
+
+		<record id="view_account_payment_form" model="ir.ui.view">
+			<field name="name">account.payment.form.inherit</field>
+			<field name="model">account.payment</field>
+			<field name="inherit_id"
+				ref="account.view_account_payment_form" />
+			<field name="arch" type="xml">
+				<field name="payment_method_line_id" position="after">
+					<field name="res_journal_bank_id"
+						attrs="{'invisible': [('is_cheque','!=', True)]}"
+						options="{'no_open': True}" />
+					<field name="bank_branch_id"
+						attrs="{'invisible': ['|',('is_cheque','!=', True),('payment_type','!=','inbound')]}" />
+					<field name="drawee_name"
+						attrs="{'invisible': ['|',('is_cheque','!=', True),('payment_type','!=','inbound')]}" />
+				</field>
+				<field name="payment_type" position="before">
+					<field name="is_cheque" invisible="1" />
+				</field>
+				<field name="is_internal_transfer" position="attributes">
+					<attribute name="attrs">{'invisible': [('is_cheque',
+						'=',True)],'readonly': [('state', '!=',
+						'draft')]}
+					</attribute>
+				</field>
+				<button name="action_draft" position="attributes">
+					<attribute name="attrs">{'invisible': ['|',('state', 'not in',
+						('posted',
+						'cancel')),('cheque_state','=','refused')]}
+					</attribute>
+				</button>
+				<field name="state" position="before">
+					<button name="%(action_reroute_cheque)d" string="Reroute"
+						type="action"
+						attrs="{'invisible': ['|','|',('cheque_state','not in',['in_cheque_box','under_collection']),('state','!=','posted'),('payment_type','!=','inbound')]}" />
+					<button name="%(action_refuse_cheque)d" string="Refuse"
+						type="action"
+						attrs="{'invisible': ['|',('cheque_state','not in',['issued', 'under_collection']),('state','!=','posted')]}" />
+				</field>
+				<field name="ref" position="replace">
+					<div class="o_td_label">
+						<label for="ref" string="Reference"
+							attrs="{'invisible': [('is_cheque', '!=',True)]}" />
+						<label for="ref" string="Memo"
+							attrs="{'invisible': [('is_cheque', '=',True)]}" />
+					</div>
+					<field name="ref" nolabel="1" />
+					<field name="handed_to_from_partner"
+						attrs="{'invisible': ['|', '&amp;', '|', ('payment_type','=','inbound'),('inverse_move_id','=',False),('state','!=','cancel'),('payment_type','=','inbound')]}"
+						string="Handed From Partner" />
+					<field name="handed_to_from_partner"
+						attrs="{'invisible': ['|', '&amp;', '|',('payment_type', '=', 'outbound'), ('inverse_move_id', '=', False), ('state', '!=', 'cancel'),('payment_type','=','outbound')]}"
+						string="Handed To Partner" />
+				</field>
+				<field name="check_amount_in_words" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</field>
+
+				<xpath expr="//sheet" position="inside">
+					<group string="Cheque Information"
+						attrs="{'invisible': [('is_cheque','!=', True)]}">
+						<group>
+							<field name="journal_bank_id" widget="selection"
+								attrs="{'invisible': [('payment_type','!=', 'inbound')]}" />
+							<field name="due_date" string="Due Date"
+								attrs="{'required': [('is_cheque','=', True)], 'readonly': [('cheque_state','in', ['collected','refused'])]}" />
+							<field name="send_to_bank_date"
+								attrs="{'invisible': [('payment_type','=','outbound')]}" />
+							<field name="collect_date" />
+						</group>
+						<group>
+							<field name="cheque_language_id" widget="selection"
+								attrs="{'invisible': [('payment_type','!=', 'outbound')]}" />
+							<field name="check_amount_in_words"
+								attrs="{'invisible': [('payment_type','!=', 'outbound')]}" />
+							<field name="cheque_note"
+								attrs="{'readonly': [('state','=', 'posted')], 'invisible': [('payment_type','!=', 'outbound')]}" />
+							<field name="cheque_state" />
+						</group>
+					</group>
+					<group string="Journal Entries Information"
+						attrs="{'invisible': [('is_cheque','!=', True)]}"
+						groups="base.group_no_one">
+						<group>
+							<field name="inverse_move_id" />
+						</group>
+						<group>
+							<field name="route_move_ids">
+								<tree default_order="id desc" limit="5">
+									<field name="name" />
+									<field name="state" />
+								</tree>
+							</field>
+						</group>
+					</group>
+				</xpath>
+			</field>
+		</record>
+
+
+		<record id="account_payment_view_pivot" model="ir.ui.view">
+			<field name="name">account.payment.pivot.view</field>
+			<field name="model">account.payment</field>
+			<field name="arch" type="xml">
+				<pivot>
+					<field name="amount" type="measure" />
+				</pivot>
+			</field>
+		</record>
+
+		<record id="account.action_account_payments" model="ir.actions.act_window">
+			<field name="view_mode">tree,kanban,form,graph,pivot</field>
+		</record>
+
+		<record model="ir.ui.view" id="res_bank_branch_tree_view">
+			<field name="name">res.bank.branch.tree</field>
+			<field name="model">res.bank.branch</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree editable="top">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="res_bank_branch_search_view">
+			<field name="name">res.bank.branch.search</field>
+			<field name="model">res.bank.branch</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window"
+			id="action_res_bank_branch_tree_view">
+			<field name="name">Bank Branches</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.bank.branch</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+		<menuitem id="res_bank_branch_menu"
+			parent="contacts.menu_config_bank_accounts"
+			action="action_res_bank_branch_tree_view" sequence="3" />
+
+
+	</data>
+</odoo>
