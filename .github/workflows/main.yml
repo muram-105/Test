@@ -3,7 +3,7 @@ name: Sync Submodule
 on:
   push:
     branches:
-      - main  # Adjust the branch name if needed
+      - main
 
 jobs:
   sync:
@@ -12,19 +12,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: true
-          fetch-depth: 0
-
-      - name: Set Git user
-        run: |
-          git config --local user.email "muram8700@gmail.com"
-          git config --local user.name "muram-105"
 
       - name: Update submodule
+        env:
+          PAT_TOKEN: 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
         run: |
           git submodule update --init --recursive
-          git submodule foreach 'git config user.email "muram8700@gmail.com"; git config user.name "muram-105"'
           git submodule update --remote
+          git config user.email "muram8700@gmail.com"
+          git config user.name "muram-105"
           git commit -am "Update submodule from common repository"
-          git push origin main  # Change 'main' to the desired branch name
+          git push
