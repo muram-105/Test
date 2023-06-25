@@ -1,0 +1,618 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_qa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-23 13:52+0000\n"
+"PO-Revision-Date: 2020-11-23 16:34+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_export_sale
+msgid " Export Sales"
+msgstr "مبيعات التصدير "
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_local_sale
+msgid " Local Sales 0%"
+msgstr "مبيعات محلية 0% "
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_39
+msgid "+BCSP"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_43
+msgid "+BES"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_29
+msgid "+BISBVRPC"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_31
+msgid "+BISVRCMA"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_41
+msgid "+BLS0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_33
+msgid "+BP0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_27
+msgid "+BP15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_35
+msgid "+BPE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_37
+msgid "+BS15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_45
+msgid "+BSE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_13
+msgid "+CSP"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_17
+msgid "+ES"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_03
+msgid "+ISBVRPC"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_05
+msgid "+ISVRCMA"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_15
+msgid "+LS0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_47
+msgid "+P0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_01
+msgid "+P15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_09
+msgid "+PE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_11
+msgid "+S15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_21
+msgid "+SE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_23
+msgid "+VACO"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_25
+msgid "+VAG"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_40
+msgid "-BCSP"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_44
+msgid "-BES"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_30
+msgid "-BISBVRPC"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_32
+msgid "-BISVRCMA"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_42
+msgid "-BLS0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_34
+msgid "-BP0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_28
+msgid "-BP15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_36
+msgid "-BPE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_38
+msgid "-BS15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_46
+msgid "-BSE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_14
+msgid "-CSP"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_18
+msgid "-ES"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_04
+msgid "-ISBVRPC"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_06
+msgid "-ISVRCMA"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_16
+msgid "-LS0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_48
+msgid "-P0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_02
+msgid "-P15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_10
+msgid "-PE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_12
+msgid "-S15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_22
+msgid "-SE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_24
+msgid "-VACO"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.account.tag,name:l10n_qa.tax_tag_26
+msgid "-VAG"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.template,description:l10n_qa.tax_po_15
+#: model:account.tax.template,description:l10n_qa.tax_so_15
+msgid "15%"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_adjustment_movements
+msgid "Adjustment Movements (Maximum ± 5000 QAR)"
+msgstr "حركات تعديل (بحد اقصى ± 5000 ريال )"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_bcsp
+msgid "BCSP"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_bes
+msgid "BES"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_bisbvrpc
+msgid "BISBVRPC"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_bisvrcma
+msgid "BISVRCMA"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_bls0
+msgid "BLS0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_po_base_0
+msgid "BP0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_po_base_15
+msgid "BP15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_bpe
+msgid "BPE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_so_base_15
+msgid "BS15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_bse
+msgid "BSE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_bcsp
+msgid "Base Citizens' Sales (Private Healthcare Services \\ Private Education)"
+msgstr "مبيعات للمواطنين (خدمات صحية خاصة / التعليم الأهلي الخاص)"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_bes
+msgid "Base Export Sales"
+msgstr "مبيعات التصدير"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_bisbvrpc
+msgid "Base Imports Subject To Basic VAT Rate - Paid At Customs"
+msgstr ""
+"الاستيرادات الخاضعة لضريبة القيمة المضافة بالنسبة الأساسية والتي تدفع "
+"بالجمارك"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_bisvrcma
+msgid ""
+"Base Imports Subject To VAT With Reverse Calculation Mechanism Applied (From "
+"a manual entry)"
+msgstr ""
+"الاستيرادات الخاضعة لضريبة القيمة المضافة التي تطبق عليها الية الاحتساب "
+"العكسي"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_bls0
+msgid "Base Local Sales 0%"
+msgstr "مبيعات محلية %0"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_po_base_0
+msgid "Base Purchase 0%"
+msgstr "مشتريات %0"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_po_base_15
+msgid "Base Purchase 15%"
+msgstr "مشتريات %15"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_base_purchases
+msgid "Base Purchases"
+msgstr "المشتريات"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_bpe
+msgid "Base Purchases Exempt"
+msgstr "المشتريات المعفاة"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_so_base_15
+msgid "Base Sale 15%"
+msgstr "مبيعات %15"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_base_sales
+msgid "Base Sales"
+msgstr "المبيعات"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_bse
+msgid "Base Sales Exempt"
+msgstr "المبيعات المعفاة"
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_basic
+msgid "Basic VAT Rate"
+msgstr "معدل ضريبة القيمة المضافة الاساسية"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_csp
+#: model:account.tax.template,name:l10n_qa.tax_so_csp
+msgid "CSP"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_citizens
+msgid "Citizens' Sales (Private Healthcare Services \\ Private Education)"
+msgstr "مبيعات للمواطنين (خدمات صحية خاصة / التعليم الأهلي الخاص)"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_csp
+msgid ""
+"Citizens' Sales (Private Healthcare Services \\ Private Education)\n"
+"\t\t"
+msgstr "مبيعات للمواطنين (خدمات صحية خاصة / التعليم الأهلي الخاص)"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_es
+msgid "ES"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.fiscal.position.template,name:l10n_qa.fiscal_position_template_ex
+msgid "Exempt Local Entity"
+msgstr "جهة محلية معفاة"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_es
+#: model:account.tax.template,description:l10n_qa.tax_so_export
+#: model:account.tax.template,name:l10n_qa.tax_so_export
+msgid "Export Sales"
+msgstr "مبيعات التصدير"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_import_subject_isbvrpc
+msgid "ISBVRPC"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.template,name:l10n_qa.tax_isbvrpc
+msgid "ISBVRPC 15%"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_import_subject_isvrcma
+#: model:account.tax.template,description:l10n_qa.tax_po_isvrcma
+#: model:account.tax.template,name:l10n_qa.tax_po_isvrcma
+msgid "ISVRCMA"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.template,description:l10n_qa.tax_isbvrpc
+msgid "Import VAT Paid At Custom"
+msgstr "الاستيرادات الخاضعة لضريبة القيمة المضافة بالنسبة الأساسية "
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_import_deffered
+msgid "Imports Deferred Payment Of Tax"
+msgstr "مستوردات مؤجلة دفع الضريبة "
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_import_subject_isbvrpc
+msgid "Imports Subject To Basic VAT Rate - Paid At Customs"
+msgstr ""
+"الاستيرادات الخاضعة لضريبة القيمة المضافة بالنسبة الأساسية والتي تدفع "
+"بالجمارك"
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_import
+msgid ""
+"Imports Subject To Basic VAT Rate - Paid At Customs\n"
+"\t\t\t"
+msgstr ""
+"Imports Subject To Basic VAT Rate - Paid At Customs\n"
+"\t\t\t"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_import_subject_isvrcma
+msgid ""
+"Imports Subject To VAT With Reverse Calculation\n"
+"\t\t\tMechanism Applied (From a manual entry)"
+msgstr ""
+"الاستيرادات الخاضعة لضريبة القيمة المضافة التي تطبق عليها الية الاحتساب "
+"العكسي(من القيود العادية)"
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_import_vat
+msgid "Imports Subject To VAT With Reverse Calculation Mechanism Applied"
+msgstr ""
+"الاستيرادات الخاضعة لضريبة القيمة المضافة التي تطبق عليها الية الاحتساب "
+"العكسي"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_ls0
+msgid "LS0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_ls0
+#: model:account.tax.template,description:l10n_qa.tax_so_local
+#: model:account.tax.template,name:l10n_qa.tax_so_local
+msgid "Local Sales 0%"
+msgstr "مبيعات محلية %0"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_slected_period
+msgid ""
+"Net (This report reflects the selected period only\n"
+"\t\t\tand doesn't include previous balances).\n"
+"\t\t"
+msgstr ""
+"الصافي (هذا التقرير يعكس نتائج الفترة المحددة زمنيا فقط و لا يشمل أي ارصدة "
+"مدورة)"
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_non_taxable_sales
+msgid "Non-taxable Sales"
+msgstr "مبيعات غير خاضعة للضريبة"
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_nonrefundable
+msgid "Nonrefundable Tax (for exempt sales)"
+msgstr "ضريبة غير قابلة للخصم ( تخص مبيعات معفاة)"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_p0
+msgid "P0"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_pe
+msgid "PE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_p0
+#: model:account.tax.template,name:l10n_qa.tax_po_0
+msgid "Purchase 0%"
+msgstr "مشتريات %0"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_p0
+msgid "Purchase 0%\t"
+msgstr "مشتريات %0"
+
+#. module: l10n_qa
+#: model:account.tax.template,name:l10n_qa.tax_po_15
+msgid "Purchase 15%"
+msgstr "مشتريات %15"
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_pe
+#: model:account.tax.template,description:l10n_qa.tax_pe
+#: model:account.tax.template,name:l10n_qa.tax_pe
+msgid "Purchases Exempt"
+msgstr "مشتريات معفاة"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_pe
+msgid ""
+"Purchases Exempt\n"
+"\t\t"
+msgstr "مشتريات معفاة"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_pvd
+msgid "Purchases VAT Deposits"
+msgstr "امانات القيمة المضافة على المشتريات "
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_s15
+msgid "S15"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_se
+msgid "SE"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.template,name:l10n_qa.tax_so_15
+msgid "Sale 15%"
+msgstr "مبيعات 15%"
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_se
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_se
+#: model:account.tax.template,description:l10n_qa.tax_so_exempt
+#: model:account.tax.template,name:l10n_qa.tax_so_exempt
+msgid "Sales Exempt"
+msgstr "المبيعات المعفاة"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_s15
+msgid "Sales Subject to Basic Rate 15%"
+msgstr "المبيعات الخاضعة للنسبة الأساسية 15%"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_svd
+msgid "Sales VAT Deposits"
+msgstr "امانات القيمة المضافة على المبيعات "
+
+#. module: l10n_qa
+#: model:account.fiscal.position.template,name:l10n_qa.fiscal_position_template_0
+msgid "Tax 0%"
+msgstr "ضريبة 0%"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_vaco
+msgid "VACO"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.report.line,tag_name:l10n_qa.tax_report_line_vag
+msgid "VAG"
+msgstr ""
+
+#. module: l10n_qa
+#: model:account.tax.group,name:l10n_qa.tax_group_vat_adjusment
+msgid "VAT Adjustment"
+msgstr "تعديلات رصيد القيمة المضافة "
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_vaco
+#: model:account.tax.template,description:l10n_qa.tax_taco
+#: model:account.tax.template,name:l10n_qa.tax_taco
+msgid "VAT Adjustment - For Company"
+msgstr "تعديلات رصيد القيمة المضافة - لصالح الشركة"
+
+#. module: l10n_qa
+#: model:account.tax.report.line,name:l10n_qa.tax_report_line_vag
+#: model:account.tax.template,description:l10n_qa.tax_tatd
+#: model:account.tax.template,name:l10n_qa.tax_tatd
+msgid "VAT Adjustment - For GTA"
+msgstr "تعديلات رصيد القيمة المضافة - لصالح الهيئة"
