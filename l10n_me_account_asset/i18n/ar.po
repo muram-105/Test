@@ -1,0 +1,84 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_me_account_asset
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-23 13:48+0000\n"
+"PO-Revision-Date: 2020-11-23 13:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_me_account_asset
+#: model:ir.model,name:l10n_me_account_asset.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "قالب مخطط الحساب"
+
+#. module: l10n_me_account_asset
+#: code:addons/l10n_me_account_asset/models/models.py:0
+#, python-format
+msgid "Accounting Systems"
+msgstr "برامج المحاسبة"
+
+#. module: l10n_me_account_asset
+#: code:addons/l10n_me_account_asset/models/models.py:0
+#, python-format
+msgid "Air Conditions"
+msgstr "برامج المحاسبة"
+
+#. module: l10n_me_account_asset
+#: code:addons/l10n_me_account_asset/models/models.py:0
+#, python-format
+msgid "Cars"
+msgstr "السيارات"
+
+#. module: l10n_me_account_asset
+#: code:addons/l10n_me_account_asset/models/models.py:0
+#, python-format
+msgid "Computers"
+msgstr "الحاسبات"
+
+#. module: l10n_me_account_asset
+#: code:addons/l10n_me_account_asset/models/models.py:0
+#, python-format
+msgid "Decorations"
+msgstr "الديكورات"
+
+#. module: l10n_me_account_asset
+#: model:ir.model.fields,field_description:l10n_me_account_asset.field_account_chart_template__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: l10n_me_account_asset
+#: code:addons/l10n_me_account_asset/models/models.py:0
+#, python-format
+msgid "Electricity Devices"
+msgstr "الاجهزة الالكترونية"
+
+#. module: l10n_me_account_asset
+#: code:addons/l10n_me_account_asset/models/models.py:0
+#, python-format
+msgid "Furniture"
+msgstr "الاثاث"
+
+#. module: l10n_me_account_asset
+#: model:ir.model.fields,field_description:l10n_me_account_asset.field_account_chart_template__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: l10n_me_account_asset
+#: model:ir.model.fields,field_description:l10n_me_account_asset.field_account_chart_template____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: l10n_me_account_asset
+#: code:addons/l10n_me_account_asset/models/models.py:0
+#, python-format
+msgid "Tools and Equipments"
+msgstr "عدد و معدات"
