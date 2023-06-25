@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="tax_tag_01" model="account.account.tag">
+		<field name="name">+P15</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_02" model="account.account.tag">
+		<field name="name">-P15</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_03" model="account.account.tag">
+		<field name="name">+ISBVRPC</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_04" model="account.account.tag">
+		<field name="name">-ISBVRPC</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+
+	<record id="tax_tag_05" model="account.account.tag">
+		<field name="name">+ISVRCMA</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_06" model="account.account.tag">
+		<field name="name">-ISVRCMA</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_47" model="account.account.tag">
+		<field name="name">+P0</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_48" model="account.account.tag">
+		<field name="name">-P0</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+
+
+	<record id="tax_tag_09" model="account.account.tag">
+		<field name="name">+PE</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_10" model="account.account.tag">
+		<field name="name">-PE</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_11" model="account.account.tag">
+		<field name="name">+S15</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_12" model="account.account.tag">
+		<field name="name">-S15</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_13" model="account.account.tag">
+		<field name="name">+CSP</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_14" model="account.account.tag">
+		<field name="name">-CSP</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_15" model="account.account.tag">
+		<field name="name">+LS0</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_16" model="account.account.tag">
+		<field name="name">-LS0</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_17" model="account.account.tag">
+		<field name="name">+ES</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_18" model="account.account.tag">
+		<field name="name">-ES</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_21" model="account.account.tag">
+		<field name="name">+SE</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+	</record>
+	<record id="tax_tag_22" model="account.account.tag">
+		<field name="name">-SE</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_23" model="account.account.tag">
+		<field name="name">+VACO</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_24" model="account.account.tag">
+		<field name="name">-VACO</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_25" model="account.account.tag">
+		<field name="name">+VAG</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_26" model="account.account.tag">
+		<field name="name">-VAG</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_27" model="account.account.tag">
+		<field name="name">+BP15</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_28" model="account.account.tag">
+		<field name="name">-BP15</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_29" model="account.account.tag">
+		<field name="name">+BISBVRPC</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_30" model="account.account.tag">
+		<field name="name">-BISBVRPC</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+
+
+	<record id="tax_tag_31" model="account.account.tag">
+		<field name="name">+BISVRCMA</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_32" model="account.account.tag">
+		<field name="name">-BISVRCMA</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_33" model="account.account.tag">
+		<field name="name">+BP0</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_34" model="account.account.tag">
+		<field name="name">-BP0</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_35" model="account.account.tag">
+		<field name="name">+BPE</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_36" model="account.account.tag">
+		<field name="name">-BPE</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_37" model="account.account.tag">
+		<field name="name">+BS15</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_38" model="account.account.tag">
+		<field name="name">-BS15</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_39" model="account.account.tag">
+		<field name="name">+BCSP</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_40" model="account.account.tag">
+		<field name="name">-BCSP</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_41" model="account.account.tag">
+		<field name="name">+BLS0</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_42" model="account.account.tag">
+		<field name="name">-BLS0</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+
+	<record id="tax_tag_43" model="account.account.tag">
+		<field name="name">+BES</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_44" model="account.account.tag">
+		<field name="name">-BES</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+
+
+	<record id="tax_tag_45" model="account.account.tag">
+		<field name="name">+BSE</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+	<record id="tax_tag_46" model="account.account.tag">
+		<field name="name">-BSE</field>
+		<field name="tax_negate">True</field>
+		<field name="applicability">taxes</field>
+		<field name="country_id" ref="base.qa" />
+
+	</record>
+</odoo>

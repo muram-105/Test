@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="tax_report_vat" model="account.report">
+		<field name="name">Tax Form 1</field>
+		<field name="root_report_id" ref="account.generic_tax_report" />
+		<field name="country_id" ref="base.qa" />
+		<field name="filter_fiscal_position" eval="True" />
+		<field name="availability_condition">country</field>
+		<field name="column_ids">
+			<record id="tax_report_vat_balance" model="account.report.column">
+				<field name="name">Balance</field>
+				<field name="expression_label">balance</field>
+				<field name="blank_if_zero" eval="False"/>
+			</record>
+		</field>
+		<field name="line_ids">
+			<record id="tax_report_title_net" model="account.report.line">
+				<field name="name">Net (This report reflects the selected period only and doesn't include previous balances).</field>
+				<field name="code">NET</field>
+                <field name="expression_ids">
+                    <record id="tax_report_line_net_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">SVD.balance+PVD.balance+VACO.balance-VAG.balance</field>
+                    </record>
+                </field>
+			</record>
+			
+			<record id="tax_report_title_svd" model="account.report.line">
+				<field name="name">Sales VAT Deposits</field>
+				<field name="code">SVD</field>
+				<field name="expression_ids">
+                    <record id="tax_report_line_std_tag" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">S15.balance+CSP.balance+LS0.balance+ES.balance+SE.balance</field>
+                    </record>
+                </field>
+				<field name="children_ids"> 
+					<record id="tax_report_line_s15" model="account.report.line">
+                         <field name="name">Sales Subject to Basic Rate 15%</field>
+                         <field name="code">S15</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_s15_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">S15</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_CSP" model="account.report.line">
+                         <field name="name">Citizens' Sales (Private Healthcare Services \ Private Education)</field>
+                         <field name="code">CSP</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_CSP_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">CSP</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_ls0" model="account.report.line">
+                         <field name="name">Local Sales 0%</field>
+                         <field name="code">LS0</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_ls0_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">LS0</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_es" model="account.report.line">
+                         <field name="name">Export Sales</field>
+                         <field name="code">ES</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_es_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">ES</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_se" model="account.report.line">
+                         <field name="name">Sales Exempt</field>
+                         <field name="code">SE</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_se_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">SE</field>
+                             </record>
+                         </field>
+                     </record>
+				</field>
+			</record>
+			
+			<record id="tax_report_title_pvd" model="account.report.line">
+				<field name="name">Purchases Vat Deposits</field>
+				<field name="code">PVD</field>
+				<field name="expression_ids">
+                    <record id="tax_report_line_ptd_tag" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">ISBVRPC.balance+ISVRCMA.balance+P15.balance+P0.balance+PE.balance</field>
+                    </record>
+                </field>
+				<field name="children_ids"> 
+					<record id="tax_report_line_ISBVRPC" model="account.report.line">
+                         <field name="name">Imports Subject To Basic VAT Rate - Paid At Customs</field>
+                         <field name="code">ISBVRPC</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_ISBVRPC_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">ISBVRPC</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_ISVRCMA" model="account.report.line">
+                         <field name="name">Imports Subject To VAT With Reverse Calculation Mechanism Applied (From a manual entry)</field>
+                         <field name="code">ISVRCMA</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_ISVRCMA_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">ISVRCMA</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_p15" model="account.report.line">
+                         <field name="name">Purchase Subject to Basic Rate 15%</field>
+                         <field name="code">P15</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_p15_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">P15</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_p0" model="account.report.line">
+                         <field name="name">Purchase 0%</field>
+                         <field name="code">P0</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_p0_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">P0</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_pe" model="account.report.line">
+                         <field name="name">Purchases Exempt</field>
+                         <field name="code">PE</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_pe_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">PE</field>
+                             </record>
+                         </field>
+                     </record>
+				</field>
+			</record>
+			
+			<record id="tax_report_title_bs" model="account.report.line">
+				<field name="name">Base Sales</field>
+				<field name="expression_ids">
+                    <record id="tax_report_line_bs_tag" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">BS15.balance+BCSP.balance+BLS0.balance+BES.balance+BSE.balance</field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                	<record id="tax_report_line_bs15" model="account.report.line">
+                         <field name="name">Base Sale 15%</field>
+                         <field name="code">BS15</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_bs15_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BS15</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_BCSP" model="account.report.line">
+                         <field name="name">Base Citizens' Sales (Private Healthcare Services \ Private Education)</field>
+                         <field name="code">BCSP</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_BCSP_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BCSP</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_BLS0" model="account.report.line">
+                         <field name="name">Base Local Sales 0%</field>
+                         <field name="code">BLS0</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_BLS0_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BLS0</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_BES" model="account.report.line">
+                         <field name="name">Base Export Sales</field>
+                         <field name="code">BES</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_BES_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BES</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_BSE" model="account.report.line">
+                         <field name="name">Base Sales Exempt</field>
+                         <field name="code">BSE</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_BSE_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BSE</field>
+                             </record>
+                         </field>
+                     </record>
+                </field>
+             </record>
+             
+             <record id="tax_report_title_bp" model="account.report.line">
+				<field name="name">Base Purchase</field>
+				<field name="code">BP</field>
+				<field name="expression_ids">
+                    <record id="tax_report_line_bp_tag" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">BP15.balance+BISBVRPC.balance+BISVRCMA.balance+BP0.balance+BPE.balance</field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                	<record id="tax_report_line_bp15" model="account.report.line">
+                         <field name="name">Base Purchase 15%</field>
+                         <field name="code">BP15</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_bp15_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BP15</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_BISBVRPC" model="account.report.line">
+                         <field name="name">Base Imports Subject To Basic VAT Rate - Paid At Customs</field>
+                         <field name="code">BISBVRPC</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_BISBVRPC_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BISBVRPC</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_BISVRCMA" model="account.report.line">
+                         <field name="name">Base Imports Subject To VAT With Reverse Calculation Mechanism Applied (From a manual entry)</field>
+                         <field name="code">BISVRCMA</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_BISVRCMA_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BISVRCMA</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_BP0" model="account.report.line">
+                         <field name="name">Base Purchase 0%</field>
+                         <field name="code">BP0</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_BP0_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BP0</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_BPE" model="account.report.line">
+                         <field name="name">Base Purchases Exempt</field>
+                         <field name="code">BPE</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_BPE_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">BPE</field>
+                             </record>
+                         </field>
+                     </record>
+                </field>
+             </record>
+             
+             <record id="tax_report_title_adjustment_movements" model="account.report.line">
+				<field name="name">Adjustment Movements (Maximum ± 5000 QAR)</field>
+				<field name="code">AM</field>
+				<field name="expression_ids">
+                    <record id="tax_report_line_am_tag" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">VACO.balance+VAG.balance</field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                	<record id="tax_report_line_VACO" model="account.report.line">
+                         <field name="name">VAT Adjustment - For Company</field>
+                         <field name="code">VACO</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_VACO_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">VACO</field>
+                             </record>
+                         </field>
+                     </record>
+                     <record id="tax_report_line_VAG" model="account.report.line">
+                         <field name="name">VAT Adjustment - For GTA</field>
+                         <field name="code">VAG</field>
+                         <field name="expression_ids">
+                             <record id="tax_report_line_VAG_tag" model="account.report.expression">
+                                 <field name="label">balance</field>
+                                 <field name="engine">tax_tags</field>
+                                 <field name="formula">VAG</field>
+                             </record>
+                         </field>
+                     </record>
+             	</field>
+             </record>
+			
+		</field>
+	</record>
+
+
+</odoo>
