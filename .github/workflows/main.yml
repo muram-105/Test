@@ -3,7 +3,7 @@ name: Sync Submodule
 on:
   push:
     branches:
-      - 16.0  # Adjust the branch name if needed
+      - '16.0'  # Adjust the branch name if needed
 
 jobs:
   sync:
