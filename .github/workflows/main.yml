@@ -24,6 +24,7 @@ jobs:
       - name: Update submodule
         run: |
           git submodule update --init --recursive
+          git submodule foreach 'git config user.email "muram8700@gmail.com"; git config user.name "muram-105"'
           git submodule update --remote
-          git -C Common commit -am "Update submodule from common repository"
-          git -C Common push
+          git commit -am "Update submodule from common repository"
+          git push
