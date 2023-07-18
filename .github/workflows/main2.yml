@@ -26,8 +26,8 @@ jobs:
           git pull origin '16.0'
 
           # Commit and push the submodule update
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.email "mura8700@gmail.com"
+          git config --global user.name "muram-105"
 
           git add .
           git commit -m "Update Common submodule" --no-verify
