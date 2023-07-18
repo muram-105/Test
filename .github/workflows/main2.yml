@@ -3,7 +3,7 @@ name: Update Common Submodule
 on:
   repository_dispatch:
     types:
-      - update-common-submodule
+      - update-test-submodule
 
 jobs:
   update_common_submodule:
@@ -13,24 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Git
-        run: |
-          git config --global user.name "muram-105"
-          git config --global user.email "muram8700@gmail.com"
-
       - name: Update Common submodule
         run: |
-          # Determine the path of the Common submodule in the Test repository
           COMMON_SUBMODULE_PATH=$(find . -type d -name "Common" | head -n 1)
-
-          # Change to the Common submodule directory
           cd $GITHUB_WORKSPACE/$COMMON_SUBMODULE_PATH
-
-          # Update the submodule
-          git checkout '16.0'
-          git pull
-
-          # Commit and push the submodule update
+          git checkout main
+          git pull origin main
           git add .
           git commit -m "Update Common submodule" --no-verify
-          git push origin '16.0'
+          git push origin main
