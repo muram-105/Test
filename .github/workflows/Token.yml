@@ -6,10 +6,9 @@ on:
       - main
 
 jobs:
-  my_job:
+  example_job:
     runs-on: ubuntu-latest
-    env:
-      ENV_SECRET: ${{ secrets.TEST_REPO_TOKEN }}
+
     steps:
-      - name: Step using Environment Secret
-        run: echo "$ENV_SECRET"
+      - name: Print Secret
+        run: echo "${{ secrets.TEST_REPO_TOKEN }}"
