@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Print Secret
-        run: echo "${{ secrets.Muram }}"
+        run: echo "${{ secrets.TEST_REPO_TOKEN }}"
