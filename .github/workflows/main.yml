@@ -15,7 +15,7 @@ jobs:
 
       - name: Update submodule
         env:
-          PAT_TOKEN: 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
+          PAT_TOKEN: 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
         run: |
           git submodule update --init --recursive
           git submodule update --remote
